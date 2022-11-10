@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'rest_framework',
     'library',
 ]
 
@@ -133,3 +134,8 @@ if env("RENDER"):
     DJANGO_SUPERUSER_USERNAME=env("DJANGO_SUPERUSER_USERNAME")
     DJANGO_SUPERUSER_PASSWORD=env("DJANGO_SUPERUSER_PASSWORD")
     DJANGO_SUPERUSER_EMAIL=env("DJANGO_SUPERUSER_EMAIL")
+
+    REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
