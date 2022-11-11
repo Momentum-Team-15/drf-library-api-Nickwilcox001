@@ -16,10 +16,10 @@ You should _not_ make forms or templates for this app, but you will need models,
 
 Your app should allow users to:
 
-- list all books
-- list all featured books
-- create a book
-- retrieve details about a book
+- list all books ✔️
+- list all featured books ✔️
+- create a book ✔️
+- retrieve details about a book ✔️
 - search books by author or title
 - see a list of all the books they are tracking and their statuses
 - mark a book as want to read, reading, or read
