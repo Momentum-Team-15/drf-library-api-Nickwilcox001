@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Book
+from .models import Book, Note
 from django.contrib.auth.models import User 
 from django.contrib.auth import get_user_model
 
@@ -10,7 +10,7 @@ class BookSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Book
-        fields = ('title', 'author', 'genre', 'publish_date', 'user')
+        fields = ('title', 'author', 'genre', 'publish_date', 'user', 'tracked')
 
 class UserSerializer(serializers.ModelSerializer):
     books = serializers.PrimaryKeyRelatedField(many=True, queryset=Book.objects.all())
@@ -18,3 +18,8 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'books')
+
+class NoteSerializer(serializers.ModelSerializer):
+    model = Note
+    class Meta:
+        fields =('user', 'book', 'created_at', 'updated_at', 'notes', 'private')

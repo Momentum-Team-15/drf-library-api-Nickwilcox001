@@ -27,6 +27,7 @@ class Book(models.Model):
     author = models.CharField(max_length=150)
     publish_date = models.DateField()
     genre = models.CharField(max_length=50, default='Mystery', choices = GENRES)
+    tracked = models.BooleanField(default=False)
     featured = models.BooleanField(default=False)
 
 STATUS_CHOICES = {

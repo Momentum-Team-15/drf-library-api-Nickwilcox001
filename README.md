@@ -21,18 +21,18 @@ Your app should allow users to:
 - create a book ✔️
 - retrieve details about a book ✔️
 - search books by author or title
-- see a list of all the books they are tracking and their statuses
+- see a list of all the books they are tracking and their statuses ✔️
 - mark a book as want to read, reading, or read
 - update the want to read/reading/read status of a book
 - see a list of all their books by status (e.g., all the books they have marked as "read")
 - retrieve all their own private notes for a book
 - retrieve all public notes for a book
-- create a note for a book
+- create a note for a book✔️
 - edit their own notes
 
 Admin users can:
 
-- update a book (including marking/unmarking it as featured)
-- delete a book (this should not delete notes about a book)
+- update a book (including marking/unmarking it as featured)✔️
+- delete a book (this should not delete notes about a book)✔️
 
 You'll need to use Insomnia (or some other tool for making requests) to test your API as you are building it.
