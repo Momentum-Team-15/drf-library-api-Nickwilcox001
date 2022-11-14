@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view 
 from rest_framework.response import Response 
 from rest_framework.reverse import reverse 
+from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework import generics, permissions
 from .models import Book, User, Note
 from .serializers import BookSerializer, UserSerializer, NoteSerializer
@@ -13,6 +14,9 @@ class BookList(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    filter_backends = (SearchFilter, OrderingFilter)
+    search_fields = ('title', 'author')
+
 
     
 
@@ -35,13 +39,16 @@ class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-class NoteList(generics.RetrieveUpdateDestroyAPIView):
+class NoteList(generics.ListCreateAPIView):
     queryset = Note.objects.all()
-    serializer_class=NoteSerializer
+    serializer_class = NoteSerializer
 
     def perform_create(self, serializer):
         serializer.save(user=self.requests.user)
 
+
+class NoteDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Note.objects.all()
 
 
 @api_view(['GET'])

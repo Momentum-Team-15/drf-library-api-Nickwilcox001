@@ -26,6 +26,7 @@ urlpatterns = [
     path('library/<int:pk>/', views.BookDetail.as_view(), name='book-detail'),
     path('users/', views.UserList.as_view(), name='user-list'),
     path('users/<int:pk>', views.UserDetail.as_view(), name='user-detail'),
+    path('library/notes/', views.NoteList.as_view(), name='notes-list'),
     path('', views.api_root),
 ]
 

@@ -22,7 +22,7 @@ Your app should allow users to:
 - retrieve details about a book ✔️
 - search books by author or title
 - see a list of all the books they are tracking and their statuses ✔️
-- mark a book as want to read, reading, or read
+- mark a book as want to read, reading, or read ✔️
 - update the want to read/reading/read status of a book
 - see a list of all their books by status (e.g., all the books they have marked as "read")
 - retrieve all their own private notes for a book

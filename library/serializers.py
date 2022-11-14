@@ -20,6 +20,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'books')
 
 class NoteSerializer(serializers.ModelSerializer):
-    model = Note
+    
     class Meta:
+        model = Note
         fields =('user', 'book', 'created_at', 'updated_at', 'notes', 'private')
